@@ -1,0 +1,128 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-green-400: #8aff66;
+  --font-sans: 'Avenir Next', Avenir, 'Segoe UI', sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, monospace;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    touch-action: pan-x pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
+  body {
+    margin: 0;
+    min-width: 280px;
+    background: #080d0a;
+    color: #d9eadc;
+    -webkit-font-smoothing: antialiased;
+  }
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button {
+    cursor: pointer;
+  }
+}
+
+#tuning-steps {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+#tuning-steps::-webkit-inner-spin-button,
+#tuning-steps::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.dial {
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: grab;
+  contain: layout style;
+}
+.dial:active {
+  cursor: grabbing;
+}
+.dial:focus-visible .dial-dot {
+  outline: 1px solid #d9eadc;
+  outline-offset: 3px;
+}
+.dial-rotor {
+  inset: 2%;
+  will-change: transform;
+}
+.dial-dot {
+  width: 22px;
+  height: 22px;
+  transform: translate3d(-50%, -50%, 0);
+  border: 4px solid #080d0a;
+  box-shadow:
+    0 0 0 1px #8aff66,
+    0 0 10px 2px #8aff6655;
+}
+
+.harmonics-dock {
+  height: calc(72px + env(safe-area-inset-bottom, 0px));
+}
+
+.piano {
+  position: relative;
+  height: 96px;
+  touch-action: none;
+  contain: layout style;
+}
+.piano-key {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border: 1px solid #263c2d;
+  border-radius: 0 0 5px 5px;
+  background: linear-gradient(#aebfb1, #d4dfd5);
+  color: #294331;
+  box-shadow: inset 0 -4px 0 #8d9e90;
+  touch-action: none;
+}
+.piano-key span {
+  position: absolute;
+  bottom: 8px;
+  inset-inline: 0;
+  font-size: 9px;
+  pointer-events: none;
+}
+.piano-black {
+  z-index: 1;
+  height: 62%;
+  transform: translateX(-50%);
+  background: linear-gradient(#17291c, #080e0a);
+  border-color: #080d0a;
+  box-shadow:
+    inset 0 -4px 0 #293e2f,
+    0 2px 3px #0008;
+}
+.piano-selected {
+  background: linear-gradient(#8bc47d, #b3e89f);
+  box-shadow: inset 0 -4px 0 #5b8251;
+}
+.piano-black.piano-selected {
+  background: linear-gradient(#355f2c, #182f14);
+  box-shadow: inset 0 -4px 0 #508643;
+}
+.piano-pressed {
+  background: #8aff66;
+  box-shadow: inset 0 -2px 0 #528d3d;
+}
+.piano-black.piano-pressed {
+  background: #65bf49;
+}
+.piano-key:focus-visible {
+  outline: 2px solid #8aff66;
+  outline-offset: -3px;
+}
