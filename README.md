@@ -1,4 +1,6 @@
-# temperament
+# [▶ Open Temperament — Try the app](https://teuncm.github.io/temperament-explorer/)
+
+An interactive musical temperament explorer for comparing and hearing intervals across different tuning systems. Features a circular interval control, a two-octave keyboard, and real-time GPU-rendered Lissajous and harmonic visualizations.
 
 ## GitHub Pages
 
@@ -10,8 +12,6 @@ The workflow in `.github/workflows/pages.yml` tests, builds, and deploys `dist/`
 4. Set your **Custom domain** in Settings → Pages, configure its DNS, and enable **Enforce HTTPS** when available. See [GitHub's domain instructions](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
 
 Asset paths stay relative through Vite's `base: './'`. The workflow uses GitHub's built-in token; no deployment secret or CNAME file is needed for this Actions-based setup.
-
-This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
 
